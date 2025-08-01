@@ -5,6 +5,8 @@
 
 ---
 
+[🔽 Ir directamente a Como desplegar kc-visit-count 🔽](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker/blob/main/README.md#-c%C3%B3mo-desplegar-kc-visit-counter)
+
 ## Diagrama de arquitectura
 Diagrama que contempla el resultado final de la arquitectura de microservicios desplegada por el *docker-compose.yml* de este repositorio.
 ![Diagrama de arquitectura de la aplicación desplegada con Docker Compose](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker/blob/main/02_Diagrama%20Docker%20Compose%20-%20Evaristo%20GZ.drawio.jpg)
@@ -142,6 +144,11 @@ docker compose down -d
 ```
 
 Esto hará que, además de parar los servicios y contenedores, elimine las redes y volúmenes creados por el fichero *docker-compose.yml*.
+
+## Documento paso a paso
+Este repositorio forma parte de la Práctica Final del módulo "Contenedores: más que VMs - Docker" perteneciente a la XII Edición Bootcamp DevOps & Cloud Computing Full Stack.
+
+Puedes consultar los hitos principales y los hitos extras que se solicitaban en el documento PDF: "01 - Evaristo GZ - Práctica Final Contenedores, más que VMs - Docker.pdf" donde se detalla y explica el paso a paso para completar los requerimientos.
 
 Recuerda que, la eliminación de los volúmenes no es una eliminación del recurso virtual, si no que también conlleva también la eliminación de los datos alojados en él. Estos no se alojan en ningún otro lugar y no serán recuperables.
 
