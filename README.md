@@ -70,7 +70,7 @@ cd EvaristoGZ_02-Docker
 Si usas WSL 2, exporta la variable PWD con `export PWD=$(realpath .)`
 
 ### 3. Crea el fichero .env
-con el siguiente contenido:
+Crea un fichero .env con el siguiente contenido:
 ```
 # Aprovisionamiento PostgreSQL
 POSTGRES_USER=postgres
@@ -83,10 +83,6 @@ DB_USER=kc-user
 DB_PASSWORD=kc-PA$$WORD
 DB_HOST=db
 DB_PORT=5432
-
-# Portainer
-PORTAINER_ADMIN_USERNAME=admin
-PORTAINER_ADMIN_PASSWORD=SUPER-PA$$WORD
 
 # Otros
 TZ=Europe/Madrid
