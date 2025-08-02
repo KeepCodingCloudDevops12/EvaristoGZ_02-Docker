@@ -160,7 +160,7 @@ Recuerda que, la eliminación de los volúmenes no es una eliminación del recur
 ## Documento paso a paso
 Este repositorio forma parte de la Práctica Final del módulo "Contenedores: más que VMs - Docker" perteneciente a la XII Edición Bootcamp DevOps & Cloud Computing Full Stack.
 
-Puedes consultar los hitos principales y los hitos extras que se solicitaban en el documento PDF: "[01 - Evaristo GZ - Práctica Final Contenedores, más que VMs - Docker.pdf](#)" donde se detalla y explica el paso a paso para completar los requerimientos.
+Puedes consultar los hitos principales y los hitos extras que se solicitaban en el documento PDF: "[01 - Evaristo GZ - Práctica Final Contenedores, más que VMs - Docker.pdf](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker/blob/main/01%20-%20Evaristo%20GZ%20-%20Pr%C3%A1ctica%20Final%20-%20Contenedores%2C%20m%C3%A1s%20que%20VMs%20-%20Docker.pdf)" donde se detalla y explica el paso a paso para completar los requerimientos.
 
 
 ## Errores comunes
@@ -169,13 +169,24 @@ Claramente, falta un servicio por iniciar. Ejecuta `docker compose ps` para ver 
 
 Identifica el servicio que no está actualmente levantado y ejecuta `docker logs NombreContenedor` para ver los logs de éste.
 
-Es posible que sea el contenedor *filebeat-kc-vc*, debido a que el fichero *filebeat.yml* no tiene permisos correctos. Comprueba que, la salida de `docker logs filebeat-kc-vc` sea algo parecido a esto:
+### El contenedor filebeat-kc-vc no está corriendo
+Si tras el punto anterior, encuentras que el contenedor *filebeat-kc-vc* no está corriendo, es posible que sea debido a que el fichero *filebeat.yml* no tiene permisos correctos. Comprueba que, la salida de `docker logs filebeat-kc-vc` sea algo parecido a esto:
 ```
 Exiting: error loading config file: config file ("filebeat.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /usr/share/filebeat/filebeat.yml')
 ```
 
-En caso de ser así, ejecuta el [paso 3 de Cómo desplegar kc-visit-count](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker?tab=readme-ov-file#3-da-permisos-a-filebeatyml)  y vuelve a intentar levantar el Docker Compose.
+En caso de ser así, ejecuta el [paso 3 de Cómo desplegar kc-visit-count](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker?tab=readme-ov-file#3-da-permisos-a-filebeatyml) y vuelve a intentar levantar el Docker Compose.
 
 ### .env not found
 Si recibes este error, significa que no has creado el .env detallado en el [paso 4 de Cómo desplegar kc-visit-count](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker?tab=readme-ov-file#4-crea-el-fichero-env) o bien lo has creado en otro directorio distinto al directorio del repositorio.
+
+### No puedo acceder a Portainer
+Portainer tiene una medida de seguridad que impide establecer una contraseña para el usuario admin si han pasado más de cinco minutos y nadie ha accedido a la dirección URL.
+
+El mensaje es algo parecido a:
+```
+Your Portainer instance timed out for security purposes. To re-enable your Portainer instance, you will need to restart Portainer.
+```
+
+Si esto ocurre, no es necesario parar y volver a arrancar todo el compose. Simplemente ejecuta `docker restart portainer-kc-vc` y vuelve a acceder a la dirección URL de Portainer.
 
