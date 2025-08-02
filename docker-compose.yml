@@ -43,7 +43,7 @@ services:
     image: docker.elastic.co/beats/filebeat:8.13.4
     container_name: filebeat-kc-vc
     volumes:
-      - ${PWD}/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - logs_db:/mnt/logs/postgresql:ro
       - logs_app:/mnt/logs/kc-visit-counter:ro
     depends_on:

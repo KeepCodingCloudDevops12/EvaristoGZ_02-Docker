@@ -69,8 +69,6 @@ cd EvaristoGZ_02-Docker
 ```
 
 
-┆ Si usas WSL 2, exporta la variable PWD con `export PWD=$(realpath .)` ┆
-
 ### 3. Crea el fichero .env
 Crea un fichero .env con el siguiente contenido:
 ```
