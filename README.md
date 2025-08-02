@@ -174,7 +174,7 @@ Es posible que sea el contenedor *filebeat-kc-vc*, debido a que el fichero *file
 Exiting: error loading config file: config file ("filebeat.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /usr/share/filebeat/filebeat.yml')
 ```
 
-En caso de ser así, ejecuta el [paso 3 de Cómo desplegar kc-visit-count](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker?tab=readme-ov-file#3-da-permisos-a-filebeat-yml)  y vuelve a intentar levantar el Docker Compose.
+En caso de ser así, ejecuta el [paso 3 de Cómo desplegar kc-visit-count](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker?tab=readme-ov-file#3-da-permisos-a-filebeatyml)  y vuelve a intentar levantar el Docker Compose.
 
 ### .env not found
 Si recibes este error, significa que no has creado el .env detallado en el [paso 4 de Cómo desplegar kc-visit-count](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker?tab=readme-ov-file#4-crea-el-fichero-env) o bien lo has creado en otro directorio distinto al directorio del repositorio.
