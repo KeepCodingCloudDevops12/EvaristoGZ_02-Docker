@@ -62,12 +62,14 @@ Ejecutado en Windows 11 con Docker Desktop 4.43.2, Docker Engine 28.3.2, Docker 
 git clone https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker
 ```
 
+
 ### 2. Ubícate en el directorio Git
 ```
 cd EvaristoGZ_02-Docker
 ```
 
-Si usas WSL 2, exporta la variable PWD con `export PWD=$(realpath .)`
+
+┆ Si usas WSL 2, exporta la variable PWD con `export PWD=$(realpath .)` ┆
 
 ### 3. Crea el fichero .env
 Crea un fichero .env con el siguiente contenido:
@@ -88,32 +90,37 @@ DB_PORT=5432
 TZ=Europe/Madrid
 ```
 
+
 ### 4. Levanta el Docker Compose
-Este paso, además, construirá las imágenes de Docker y las descargará en caso de ser necesario.
-`docker compose up --build -d`
+Este paso, además, construirá las imágenes de Docker y las descargará en caso de ser necesario. Creará los servicios, contenedores, redes y volúmenes.
+```
+docker compose up --build -d
+```
 
 Puedes usar `docker compose --build` para que se muestre la salida de los logs de contenedores en pantalla.
+
 
 ### 5. Verifica el estado del Compose
 Ejecutamos `docker compose ls` para conocer el estado del compose.
 
 En la columna status deberá poner *running(7)*.
 
+
 ### 6. Accede al servicio web
-A través de un navegador web, accede a http://localhost
+A través de un navegador web, accede a [http://localhost](http://localhost)
+
+El resultado esperado es un número, que representa el total de las visitas o peticiones a esa dirección URL y una tabla con las últimas 10 visitas.
 
 ### 7. Comprueba el acceso al resto de servicios
 - **Portainer**
   
   Será el primero, puesto que dispone de un máximo de 5 minutos para establecer la contraseña de admin.
 
-  Accedemos a través de http://localhost:9000
-
-  El resultado esperado es un número, que representa el total de las visitas o peticiones a esa dirección URL y una tabla con las últimas 10 visitas.
+  Accedemos a través de un navegador web a [http://localhost:9000](http://localhost:9000)
 
 - **Kibana**
   
-  Accedemos a través de http://localhost:5601/.
+  Accedemos a través de un navegador web a [http://localhost:5601](http://localhost:5601)
 
   La primera vez que iniciamos Kibana tenemos que crear el Data View:
 
@@ -122,7 +129,8 @@ A través de un navegador web, accede a http://localhost
      - Index pattern: filebeat-*
   3. A la derecha aparecerá los índices que coinciden con el patrón.
   4. Pulsamos sobre el botón “Save data view to Kibana”.
- 
+  5. Visualizamos los datos y realizamos nuevas peticiones a la app web si deseamos.
+
 
 ### 8. Para el Docker Compose
 Tras realizar las comprobaciones de los servicios y comprobar el funcionamiento de la infraestructura, el penúltimo paso es parar el Docker Compose.
@@ -141,12 +149,12 @@ docker compose down -d
 
 Esto hará que, además de parar los servicios y contenedores, elimine las redes y volúmenes creados por el fichero *docker-compose.yml*.
 
+Recuerda que, la eliminación de los volúmenes no es una eliminación del recurso virtual, si no que también conlleva la eliminación de los datos alojados en él. Estos no se alojan en ningún otro lugar y no serán recuperables.
+
+---
+
 ## Documento paso a paso
 Este repositorio forma parte de la Práctica Final del módulo "Contenedores: más que VMs - Docker" perteneciente a la XII Edición Bootcamp DevOps & Cloud Computing Full Stack.
 
-Puedes consultar los hitos principales y los hitos extras que se solicitaban en el documento PDF: "01 - Evaristo GZ - Práctica Final Contenedores, más que VMs - Docker.pdf" donde se detalla y explica el paso a paso para completar los requerimientos.
-
-Recuerda que, la eliminación de los volúmenes no es una eliminación del recurso virtual, si no que también conlleva también la eliminación de los datos alojados en él. Estos no se alojan en ningún otro lugar y no serán recuperables.
-
----
+Puedes consultar los hitos principales y los hitos extras que se solicitaban en el documento PDF: "[01 - Evaristo GZ - Práctica Final Contenedores, más que VMs - Docker.pdf](#)" donde se detalla y explica el paso a paso para completar los requerimientos.
 
