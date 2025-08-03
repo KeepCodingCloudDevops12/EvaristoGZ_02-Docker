@@ -9,7 +9,7 @@
 
 ## Diagrama de arquitectura
 Diagrama que contempla el resultado final de la arquitectura de microservicios desplegada por el *docker-compose.yml* de este repositorio.
-![Diagrama de arquitectura de la aplicación desplegada con Docker Compose](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker/blob/main/02_Diagrama%20Docker%20Compose%20-%20Evaristo%20GZ.drawio.jpg)
+![Diagrama de arquitectura de la aplicación desplegada con Docker Compose](https://github.com/KeepCodingCloudDevops12/EvaristoGZ_02-Docker/blob/main/02%20-%20Diagrama%20Docker%20Compose%20-%20Evaristo%20GZ.drawio.jpg)
 
 ## Descripción de la aplicación
 
